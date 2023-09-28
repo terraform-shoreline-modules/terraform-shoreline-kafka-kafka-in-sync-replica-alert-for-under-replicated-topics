@@ -11,15 +11,15 @@
       "value": ""
     },
     {
-      "name": "TOPIC_NAME",
-      "value": ""
-    },
-    {
       "name": "NEW_REPLICATION_FACTOR",
       "value": ""
     },
     {
       "name": "ZOOKEEPER_URL",
+      "value": ""
+    },
+    {
+      "name": "TOPIC_NAME",
       "value": ""
     },
     {
@@ -144,7 +144,7 @@
       "name": "cell_17",
       "type": "OP_LANG",
       "enabled": true,
-      "content": "host | host_name=$HOST_NAME | invoke_replication_check($BROKER_HOST_PORT, $TOPIC_NAME)"
+      "content": "host | host_name=$HOST_NAME | invoke_monitor_replication_factor($BROKER_HOST_PORT, $TOPIC_NAME)"
     },
     {
       "name": "cell_18",
@@ -156,7 +156,7 @@
       "name": "cell_19",
       "type": "OP_LANG",
       "enabled": true,
-      "content": "host | host_name=$HOST_NAME | invoke_change_replication_factor($NEW_PARTITION_COUNT, $TOPIC_NAME, $NEW_REPLICATION_FACTOR, $KAFKA_HOME_DIRECTORY)"
+      "content": "host | host_name=$HOST_NAME | invoke_change_replication_factor($NEW_PARTITION_COUNT, $NEW_REPLICATION_FACTOR, $TOPIC_NAME, $KAFKA_HOME_DIRECTORY)"
     }
   ]
 }
